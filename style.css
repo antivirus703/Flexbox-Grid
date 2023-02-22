@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+:root{
+    --red:rgb(255, 0, 0);
+    --gray: #383838;
+}
+html {
+    scroll-behavior: smooth;
+}
+.container{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    width: 100%;
+    min-height: 40px;
+    background-color: #292929;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding:30px;
+    gap: 10px 15px;
+}
+.logoNavBar{
+    width: 180px;
+}
+.headerBtnGroup{
+    display: flex;
+    gap: 15px;
+}
+.navBtn{
+    font-size: 16px;
+    padding: 7px;
+    background-color: transparent;
+    border: 2px solid transparent;
+    color: #fff;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+.navBtn:hover{
+    color: var(--red);
+    border: 1px solid var(--red);
+    background-color: #fff;
+}
+.sectionTitle{
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding-top: 20px;
+}
+.sectionDescription{
+    text-align: center;
+    color: var(--gray);
+    margin-bottom: 20px;
+}
+.spanOne{
+    color: #d4d4d4;
+    font-size: 30px;
+    font-weight: bold;
+}
+.spanSports{
+    color: var(--red);
+    font-size: 30px;
+    font-weight: bold;
+}
+.gridContainer{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: "mainContent sidebarContent";
+    padding: 20px;
+    flex: 1 0 auto;
+}
+.mainContent{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    grid-area: mainContent;
+}
+.mainCardImg{
+    width: 100%;
+    height: 180px;
+    border-radius: 10px;
+}
+.categoryCard{
+    width: 280px;
+    height: 380px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    background-color: var(--gray);
+}
+.categoryCard:hover{
+    border-color: var(--red);
+    box-shadow: 5px 5px 4px var(--red);
+}
+.mainCategoryCardTitle{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 6px;
+    color: #fff;
+}
+.mainCategoryCardDescription{
+    padding: 6px;
+    color: #fff;
+}
+.sidebarContent{
+    background-color: var(--gray);
+    color: #fff;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 300px;
+    grid-area: sidebarContent;
+    gap: 20px;
+    border-radius: 10px;
+}
+.sidebarCardImg{
+    width: 100%;
+    border-radius: 10px;
+}
+.sidebarCard{
+    width: 75%;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    transition: .5s;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+.sidebarCard:hover{
+    border-color: var(--red);
+    box-shadow: 5px 5px 4px var(--red);
+}
+.sidebarCardTitle{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 10px;
+}
+.sidebarTitle{
+    font-size: 25px;
+}
+.logoFooter{
+    width: 180px;
+}
+.footer{
+    width: 100%;
+    min-height: 40px;
+    background-color: #292929;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    gap: 15px;
+}
+.footerAnchor{
+    color: #fff;
+    text-decoration: none;
+    transition: .5s ease-in-out;
+}
+.footerAnchor:hover{
+    color: var(--red);
+    text-decoration: underline;
+}
+@media(max-width: 630px){
+    .gridContainer{
+        grid-template-areas: "mainContent" "sidebarContent";
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .sidebarContent{
+        min-width: auto;
+    }
+    .sectionDescription{
+        font-size: 17px;
+    }
+    .footerAnchor{
+        font-size: 19px;
+    }
+}
+@media (max-width: 468px){
+    .header{
+        justify-content: center;
+    }
+    .footer{
+        justify-content: center;
+    }
+}
+/* @media (min-width: 1572px), (max-width: 2560px) {
+    .header{
+        min-height: 70px;
+    }
+    .categoryCard{
+        width: 600px;
+        height: 450px;
+        margin: auto;
+    }
+    .mainCardImg{
+        width: 100%;
+        height: 280px;
+        border-radius: 10px;
+    }
+    .mainCategoryCardTitle{
+        font-size: 30px;
+    }
+    .mainCategoryCardDescription{
+        font-size: 22px;
+    }
+    .sidebarCardImg{
+        width: 500px;
+        display: flex;
+        justify-content:center;
+        border-radius: 10px;
+    }
+    .sidebarCard{
+        width: auto;
+        min-height: 280px;
+    }
+    .sidebarContent{
+        width:600px;
+    }
+    .sidebarTitle{
+        font-size: 30px;
+    }
+    .sidebarCardTitle{
+        font-size: 22px;
+    }
+    .sectionTitle, .spanOne, .spanSports {
+        font-size: 35px;
+    }
+    .sectionDescription{
+        font-size: 27px;
+    }
+    .navBtn{
+        font-size: 23px;
+    }
+}
+@media (max-width: 1290px){
+    .gridContainer{
+        gap: 25px
+    }
+    .container{
+        width: 100%;
+        display: flex;
+    }
+
+} */
